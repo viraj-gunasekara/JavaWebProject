@@ -320,3 +320,64 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 });
 
+//SEARCH BAR
+document.addEventListener("DOMContentLoaded", function () {
+  const searchBox = document.getElementById("search-box");
+  const searchResults = document.getElementById("search-results");
+
+  // Hide search results initially
+  searchResults.style.display = "none";
+
+  searchBox.addEventListener("input", function () {
+    let query = searchBox.value.toLowerCase();
+    searchResults.innerHTML = "";
+
+    if (query.trim() === "") {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    let items;
+    
+    // Check if we are on 'allproducts.jsp'
+    if (window.location.pathname.includes("allproducts.jsp")) {
+      items = document.querySelectorAll(".all-prod-slider .prod-box .content h3");
+    } else {
+      items = document.querySelectorAll(".featured-slider .box .content h3");
+    }
+
+    let filteredItems = [];
+
+    items.forEach(item => {
+      let name = item.innerText.toLowerCase();
+      if (name.includes(query)) {
+        let imgSrc = item.closest(".prod-box") ? item.closest(".prod-box").querySelector("img").src : item.parentElement.parentElement.querySelector("img").src;
+        filteredItems.push({ name, imgSrc });
+      }
+    });
+
+    if (filteredItems.length === 0) {
+      searchResults.style.display = "none";
+      return;
+    }
+
+    filteredItems.forEach(product => {
+      let div = document.createElement("div");
+      div.classList.add("search-item");
+      div.innerHTML = `<img src="${product.imgSrc}" alt=""><span>${product.name}</span>`;
+      div.addEventListener("click", function () {
+        searchBox.value = product.name;
+        searchResults.style.display = "none";
+      });
+      searchResults.appendChild(div);
+    });
+
+    searchResults.style.display = "block";
+  });
+
+  document.addEventListener("click", function (e) {
+    if (!searchBox.contains(e.target) && !searchResults.contains(e.target)) {
+      searchResults.style.display = "none";
+    }
+  });
+});
