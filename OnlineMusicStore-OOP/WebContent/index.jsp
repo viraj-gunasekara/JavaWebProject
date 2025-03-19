@@ -108,6 +108,50 @@
 
     </section>
     <!-- home section end -->
+    
+        <!-- icons section -->
+    <section class="icons-container">
+        <div class="icons">
+            <i class="fas fa-truck"></i>
+            <div class="content">
+                <h3>free delivery</h3>
+                <p>order over LKR 100</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-lock"></i>
+            <div class="content">
+                <h3>secure payment</h3>
+                <p>100+ payments proceed</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-redo-alt"></i>
+            <div class="content">
+                <h3>easy returns</h3>
+                <p>7 days returns</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-headset"></i>
+            <div class="content">
+                <h3>24/7 support</h3>
+                <p>call us anytime</p>
+            </div>
+        </div>
+
+        <div class="icons">
+            <i class="fas fa-certificate"></i>
+            <div class="content">
+                <h3>warranty</h3>
+                <p>365 Days</p>
+            </div>
+        </div>
+    </section>
+    <!-- icons section end -->
 
 
 
