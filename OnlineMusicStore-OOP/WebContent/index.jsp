@@ -12,7 +12,7 @@
     <!-- header start -->
     <header class="header">
         <div class="header-1">
-            <a href="index.html" class="logo"> <i class="fas fa-music"> Tones & Tunes </i></a>
+            <a href="index.jsp" class="logo"> <i class="fas fa-music"> Tones & Tunes </i></a>
 
             <form action="" class="search-form">
                 <input type="search" name="" placeholder="search here..." id="search-box">
@@ -35,23 +35,23 @@
         <div class="header-2">
             <nav class="navbar">
                 <a href="#home">home</a>
-                <a href="allproducts.html">All Products</a>
+                <a href="allproducts.jsp">All Products</a>
                 <div class="dropdown">
                     <a href="#" class="dropbtn">Categories <i class="fas fa-chevron-down"></i></a>
                     <div class="dropdown-content">
-                        <a href="allproducts.html?category=string-instruments" data-category="string-instruments"><i
+                        <a href="allproducts.jsp?category=string-instruments" data-category="string-instruments"><i
                                 class="fas fa-guitar"></i> String Instruments<i
                                 class="side-arrow fas fa-chevron-right"></i></a>
-                        <a href="allproducts.html?category=drums-percussion" data-category="drums-percussion"><i
+                        <a href="allproducts.jsp?category=drums-percussion" data-category="drums-percussion"><i
                                 class="fas fa-drum"></i> Drums & Percussion<i
                                 class="side-arrow fas fa-chevron-right"></i></a>
-                        <a href="allproducts.html?category=keyboard-piano" data-category="keyboard-piano"><i
+                        <a href="allproducts.jsp?category=keyboard-piano" data-category="keyboard-piano"><i
                                 class="fas fa-keyboard"></i> Keyboards & Pianos<i
                                 class="side-arrow fas fa-chevron-right"></i></a>
-                        <a href="allproducts.html?category=home-audio" data-category="home-audio"><i
+                        <a href="allproducts.jsp?category=home-audio" data-category="home-audio"><i
                                 class="fas fa-volume-up"></i> Home Audio<i
                                 class="side-arrow fas fa-chevron-right"></i></a>
-                        <a href="allproducts.html?category=studio-recording" data-category="studio-recording"><i
+                        <a href="allproducts.jsp?category=studio-recording" data-category="studio-recording"><i
                                 class="fas fa-microphone"></i> Studio & Recording<i
                                 class="side-arrow fas fa-chevron-right"></i></a>
                     </div>
@@ -93,7 +93,7 @@
                     Any Musician <span class="highlight2"><br>Need.</span>
                 </p>
                 <p class="pro">From Starters To Pro...</p>
-                <a href="allproducts.html" class="btn">shop now</a>
+                <a href="allproducts.jsp" class="btn">shop now</a>
             </div>
 
             <div class="swiper music-slider">
