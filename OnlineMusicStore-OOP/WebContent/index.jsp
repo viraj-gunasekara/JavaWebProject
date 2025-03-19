@@ -80,7 +80,34 @@
 	<!-- ForgetPw Placeholder -->
 	<div id="forgetpw-container"></div>
 
+    <!-- home section -->
+    <section class="home" id="home">
+        <div class="row">
 
+            <div class="content">
+                <h3>Bring Music To Life</h3>
+                <p class="highlight"> We Have
+                    <span class="highlight1">Everything</span><br>
+                    Any Musician <span class="highlight2"><br>Need.</span>
+                </p>
+                <p class="pro">From Starters To Pro...</p>
+                <a href="allproducts.html" class="btn">shop now</a>
+            </div>
+
+            <div class="swiper music-slider">
+                <div class="swiper-wrapper">
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-1.png" alt=""></a>
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-2.png" alt=""></a>
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-3.png" alt=""></a>
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-4.png" alt=""></a>
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-5.png" alt=""></a>
+                    <a href="#" class="swiper-slide glass-container"><img src="image/music-6.png" alt=""></a>
+                </div>
+            </div>
+        </div>
+
+    </section>
+    <!-- home section end -->
 
 
 
