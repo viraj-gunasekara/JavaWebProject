@@ -74,6 +74,8 @@
 	<div id="login-container"></div>
 	<!-- Reg Placeholder -->
     <div id="reg-container"></div>
+    <!-- ForgetPw Placeholder -->
+    <div id="forgetpw-container"></div>
 
 
 

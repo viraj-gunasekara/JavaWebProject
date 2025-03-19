@@ -22,6 +22,14 @@ document.addEventListener('DOMContentLoaded', () => {
           document.getElementById('reg-container').innerHTML = data;
           setupRegEvents(); // Bind events after loading
       });
+  
+  // Load forget password form
+  fetch('forgetpw.jsp')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('forgetpw-container').innerHTML = data;
+          setupForgetPwEvents(); // Bind events after loading
+      });
 });
 
 function setupLoginEvents() {
