@@ -246,3 +246,7 @@ var swiper = new Swiper(".reviews-slider", {
    },
  },
 });
+
+/*allProducts PAGE JS*/
+
+

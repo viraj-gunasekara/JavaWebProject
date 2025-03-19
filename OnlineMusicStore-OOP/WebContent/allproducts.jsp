@@ -81,7 +81,40 @@
     <!-- ForgetPw Placeholder -->
     <div id="forgetpw-container"></div>
     
-    
+    <!-- categories -->
+    <section class="categories">
+        <div class="category active-category" data-category="all">
+            <div class="circle"></div>
+            <img src="image/category_images/all.png" alt="All Products" class="category-img">
+            <p>ALL PRODUCTS</p>
+        </div>
+        <div class="category" data-category="string-instruments">
+            <div class="circle"></div>
+            <img src="image/category_images/string.png" alt="String Instruments" class="category-img">
+            <p>STRING INSTRUMENTS</p>
+        </div>
+        <div class="category" data-category="drums-percussion">
+            <div class="circle"></div>
+            <img src="image/category_images/drum.png" alt="Drums & Percussion" class="category-img">
+            <p>DRUMS AND PERCUSSION</p>
+        </div>
+        <div class="category" data-category="keyboard-piano">
+            <div class="circle"></div>
+            <img src="image/category_images/keyboard.png" alt="Keyboards & Pianos" class="category-img">
+            <p>KEYBOARDS AND PIANOS</p>
+        </div>
+        <div class="category" data-category="home-audio">
+            <div class="circle"></div>
+            <img src="image/category_images/home.png" alt="Home Audio" class="category-img">
+            <p>HOME AUDIO</p>
+        </div>
+        <div class="category" data-category="studio-recording">
+            <div class="circle"></div>
+            <img src="image/category_images/studio.png" alt="Studio & Recording" class="category-img">
+            <p>STUDIO AND RECORDING</p>
+        </div>
+    </section>
+    <!-- categories end -->
     
     
     
