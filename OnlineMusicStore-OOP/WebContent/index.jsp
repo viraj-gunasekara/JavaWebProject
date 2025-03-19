@@ -63,14 +63,25 @@
 	</div>
 	</header>
 	<!-- header end -->
+
 	<!-- small displays - bottom navbar -->
-    <nav class="bottom-navbar">
-        <a href="#home" class="fas fa-home"></a>
-        <a href="#featured" class="fas fa-list"></a>
-        <a href="#new-arrivals" class="fas fa-tags"></a>
-        <a href="#reviews" class="fas fa-comments"></a>
-    </nav>
-    <!-- small displays - bottom navbar end -->
+	<nav class="bottom-navbar"> <a href="#home" class="fas fa-home"></a>
+	<a href="#featured" class="fas fa-list"></a> <a href="#new-arrivals"
+		class="fas fa-tags"></a> <a href="#reviews" class="fas fa-comments"></a>
+	</nav>
+	<!-- small displays - bottom navbar end -->
+
+	<!-- Login Placeholder -->
+	<div id="login-container"></div>
+
+	<!-- Reg Placeholder -->
+	<div id="reg-container"></div>
+
+	<!-- ForgetPw Placeholder -->
+	<div id="forgetpw-container"></div>
+
+
+
 
 
 
