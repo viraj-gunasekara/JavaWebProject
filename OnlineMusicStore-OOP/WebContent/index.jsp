@@ -519,6 +519,97 @@
     </section>
     <!-- new arrivals section end -->
     
+    <!-- middle image section -->
+    <section class="middle-image">
+
+    </section>
+    <!-- middle image section end -->
+
+    <!-- reviews section -->
+    <section class="reviews" id="reviews">
+        <h1 class="heading"><span>buyer's reviews</span></h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <!-- person 1 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-1.png" alt="">
+                    <h3>Isuni Devindi</h3>
+                    <p>Good site to select from a variety of electrical music items. Prices are reasonable.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- person 2 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-2.png" alt="">
+                    <h3>Nuwan Chamara</h3>
+                    <p>Site is super friendly. There had brief introduction of how to and what to choose.
+                        Thanks for the service and I recommend.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+                <!-- person 3 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-3.png" alt="">
+                    <h3>Ridmi Kawya</h3>
+                    <p>Great site to buy musical instruments, But delivery price is bit overpriced</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- person 4 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-4.png" alt="">
+                    <h3>Nayomi Ranweera</h3>
+                    <p>They got vast selection of guitars for rent and sell: classic, acoustic, semi acoustic and
+                        electric.
+                        Bass guitar, Sri Lanka drums, cellos, violin and more.
+                        Worth checking!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- person 5 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-5.png" alt="">
+                    <h3>Hirun Prabashwara</h3>
+                    <p>This is your only option for getting an electric or acoustic guitar, strings, Cajon, even
+                        amplifiers.
+                        Site is always super helpful, and has fair prices.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- reviews section end -->
 
 
 
