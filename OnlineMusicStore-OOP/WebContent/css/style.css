@@ -1001,7 +1001,36 @@ section{
 
 /* all products end */
 
+/* pagination */
+.pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
 
+.pagination button {
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    margin: 0 5px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.pagination button:disabled {
+    background: #888;
+    cursor: not-allowed;
+}
+
+.pagination span {
+    margin: 0 10px;
+    font-size: 18px;
+}
+/* pagination end */
 
 
 

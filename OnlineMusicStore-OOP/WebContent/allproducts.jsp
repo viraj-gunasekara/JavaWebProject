@@ -561,10 +561,15 @@
             </div>
         </div>
     </section>
-
     <!-- all products end -->
     
-    
+    <!-- pagination -->
+    <div class="pagination">
+        <button id="prev-page" disabled>&laquo; Prev</button>
+        <span id="page-numbers"></span>
+        <button id="next-page">&raquo; Next</button>
+    </div>
+    <!-- pagination end -->
     
 
 
