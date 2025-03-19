@@ -33,7 +33,7 @@
         <!-- header 2  -->
         <div class="header-2">
             <nav class="navbar">
-                <a href="#home">home</a>
+                <a href="index.jsp">home</a>
                 <a href="allproducts.jsp">All Products</a>
                 <div class="dropdown">
                     <a href="#" class="dropbtn">Categories <i class="fas fa-chevron-down"></i></a>

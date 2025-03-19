@@ -381,3 +381,80 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+//CART START
+//load cart.jsp dynamically
+document.addEventListener('DOMContentLoaded', () => {
+fetch('cart.jsp')
+   .then(response => response.text())
+   .then(data => {
+       document.getElementById('cart-container').innerHTML = data;
+       setupCartEvents();
+   });
+});
+
+//cart event listeners
+function setupCartEvents() {
+const cartBtn = document.getElementById('cart-btn');
+const cartPanel = document.getElementById('cart-panel');
+const closeCart = document.getElementById('close-cart');
+
+if (!cartBtn || !cartPanel || !closeCart) {
+   console.error("Cart elements not found!");
+   return;
+}
+
+cartBtn.addEventListener('click', () => cartPanel.classList.add('active'));
+closeCart.addEventListener('click', () => cartPanel.classList.remove('active'));
+
+// Enable manual quantity input
+document.querySelectorAll('.quantity-control input').forEach(input => {
+   input.addEventListener('input', function () {
+       let id = this.id.split('-')[1];
+       let newQty = parseInt(this.value) || 1;
+       if (newQty < 1) newQty = 1;
+       quantities[id] = newQty;
+       updateCart(id);
+   });
+});
+}
+
+//cart quantity functions
+let quantities = { 1: 1 };
+const unitPrice = 45500;
+
+function increaseQty(id) {
+ quantities[id]++;
+ updateCart(id);
+}
+
+function decreaseQty(id) {
+ if (quantities[id] > 1) {
+     quantities[id]--;
+     updateCart(id);
+ }
+}
+
+function updateCart(id) {
+ let qtyInput = document.getElementById(`qty-${id}`);
+ qtyInput.value = quantities[id];
+
+ let itemTotal = unitPrice * quantities[id];
+ document.getElementById(`item-total-${id}`).innerText = itemTotal.toLocaleString('en-US', { minimumFractionDigits: 2 });
+
+ updateGrandTotal();
+}
+
+function updateGrandTotal() {
+ let grandTotal = Object.keys(quantities).reduce((sum, id) => sum + quantities[id] * unitPrice, 0);
+ document.getElementById('grand-total').innerText = grandTotal.toLocaleString('en-US', { minimumFractionDigits: 2 });
+}
+
+function removeItem(id) {
+ document.querySelector('.cart-item').remove();
+ delete quantities[id];
+ updateGrandTotal();
+}
+
+//CART END
