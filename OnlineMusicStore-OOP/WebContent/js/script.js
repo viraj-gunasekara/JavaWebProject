@@ -249,4 +249,74 @@ var swiper = new Swiper(".reviews-slider", {
 
 /*allProducts PAGE JS*/
 
+//CATEGORY SELECTION
+document.addEventListener("DOMContentLoaded", () => {
+    const categories = document.querySelectorAll(".category");
+    const products = document.querySelectorAll(".prod-box");
+    const categoryLinks = document.querySelectorAll(".dropdown-content a");
+
+    function activateCategory(selectedCategory) {
+        categories.forEach(cat => cat.classList.remove("active-category"));
+        const activeCategory = document.querySelector(`.category[data-category="${selectedCategory}"]`);
+        if (activeCategory) {
+            activeCategory.classList.add("active-category");
+        }
+    }
+
+    function filterProducts(selectedCategory) {
+        products.forEach(product => {
+            let productCategory = product.getAttribute("data-category");
+            product.style.display = (selectedCategory === "all" || productCategory === selectedCategory) ? "block" : "none";
+        });
+    }
+
+    // Handle category section clicks
+    categories.forEach(category => {
+        category.addEventListener("click", function () {
+            let selectedCategory = this.getAttribute("data-category");
+            activateCategory(selectedCategory);
+            filterProducts(selectedCategory);
+        });
+    });
+
+    // Handle dropdown menu clicks
+    categoryLinks.forEach(link => {
+        link.addEventListener("click", function (e) {
+            let selectedCategory = this.getAttribute("data-category");
+
+            if (window.location.pathname.includes("allproducts.jsp")) {
+                e.preventDefault();
+                activateCategory(selectedCategory);
+                filterProducts(selectedCategory);
+            } else {
+                // Redirect with category parameter
+                window.location.href = `allproducts.jsp?category=${selectedCategory}`;
+            }
+        });
+    });
+});
+
+// Handle category selection via URL (for allproducts.jsp)
+document.addEventListener("DOMContentLoaded", function () {
+    function getQueryParam(param) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(param);
+    }
+
+    const selectedCategory = getQueryParam("category");
+
+    if (selectedCategory) {
+        const categoryTitle = document.getElementById("category-title");
+        if (categoryTitle) {
+            categoryTitle.textContent = selectedCategory.replace("-", " ");
+        }
+
+        // Wait for the DOM to fully load before filtering
+        setTimeout(() => {
+            document.querySelectorAll(".product").forEach(product => {
+                product.style.display = (product.dataset.category === selectedCategory) ? "block" : "none";
+            });
+        }, 100); // Small delay to ensure DOM elements are ready
+    }
+});
 
