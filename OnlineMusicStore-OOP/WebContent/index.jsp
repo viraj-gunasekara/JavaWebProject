@@ -72,7 +72,8 @@
 
 	<!-- Login Placeholder -->
 	<div id="login-container"></div>
-
+	<!-- Reg Placeholder -->
+    <div id="reg-container"></div>
 
 
 

@@ -4,9 +4,48 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+    <title>Register</title>
+    <!-- css -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <!-- reg form -->
+    <div class="reg-form-container">
 
+        <div id="close-reg-btn" class="fas fa-times"></div>
+
+        <form action="">
+            <h3>sign up</h3>
+            <div class="name-fields">
+                <div class="field">
+                    <span>First name</span>
+                    <input type="text" name="" class="box" placeholder="your first name" id="">
+                </div>
+                <div class="field">
+                    <span>Last name</span>
+                    <input type="text" name="" class="box" placeholder="your last name" id="">
+                </div>
+            </div>
+            <span>Email</span>
+            <input type="email" name="" class="box" placeholder="enter your email" id="">
+            <span>Phone number</span>
+            <input type="number" name="" class="box" placeholder="enter your phone number" id="">
+            <span>Password</span>
+            <input type="password" name="" class="box" placeholder="enter your password" id="">
+            <span>Confirm password</span>
+            <input type="password" name="" class="box" placeholder="re-enter your password" id="">
+
+            <div class="checkbox">
+                <input type="checkbox" name="" id="music-box">
+                <label for="music-box">
+                    <p>I agree to the <a href="#">Terms & Conditions. </a></p>
+                </label>
+            </div>
+
+            <input type="submit" value="sign up" class="btn">
+
+            <p>already have an account ? <a href="#" id="login-btn2">log in</a></p>
+        </form>
+    </div>
 </body>
 </html>

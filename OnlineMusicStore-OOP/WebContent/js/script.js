@@ -15,6 +15,13 @@ document.addEventListener('DOMContentLoaded', () => {
           setupLoginEvents(); // Bind events after loading
       });
   
+  // Load register form
+  fetch('register.jsp')
+      .then(response => response.text())
+      .then(data => {
+          document.getElementById('reg-container').innerHTML = data;
+          setupRegEvents(); // Bind events after loading
+      });
 });
 
 function setupLoginEvents() {
@@ -46,6 +53,33 @@ function setupLoginEvents() {
 	      forgetPwBtn.addEventListener('click', () => {
 	          loginForm.classList.remove('active');
 	          document.querySelector('.forgetpw-form-container').classList.add('active');
+	      });
+	  }
+	}
+
+function setupRegEvents() {
+	  const regForm = document.querySelector('.reg-form-container');
+
+	  const regBtn = document.querySelector('#reg-btn');
+	  if (regBtn) {
+	      regBtn.addEventListener('click', () => {
+	          regForm.classList.toggle('active');
+	          document.querySelector('.login-form-container').classList.remove('active');
+	      });
+	  }
+
+	  const closeReg = document.querySelector('#close-reg-btn');
+	  if (closeReg) {
+	      closeReg.addEventListener('click', () => {
+	          regForm.classList.remove('active');
+	      });
+	  }
+
+	  const loginBtn2 = document.querySelector('#login-btn2');
+	  if (loginBtn2) {
+	      loginBtn2.addEventListener('click', () => {
+	          regForm.classList.remove('active');
+	          document.querySelector('.login-form-container').classList.add('active');
 	      });
 	  }
 	}
