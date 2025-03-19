@@ -648,7 +648,52 @@ section{
 
 /* featured section end */
 
+/* new arrivals section */
+.arrivals{
+    padding-top: 0;
+}
 
+.arrivals .arrivals-slider .box{
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 2rem 1rem;
+    border: var(--border);
+    margin: 1rem 0;
+    background: linear-gradient(45deg, #eeeeee 90%, #082271 10%);
+}
+
+.arrivals .arrivals-slider .box:hover{
+    border: var(--border-hover);
+}
+
+.arrivals .arrivals-slider .box .image img{
+    height: 15rem;
+}
+
+.arrivals .arrivals-slider .box .content h3{
+    font-size: 1.9rem;
+    color: var(--black);
+}
+
+.arrivals .arrivals-slider .box .content .price{
+    font-size: 1.9rem;
+    color: var(--black);
+    padding-bottom: .5rem;
+}
+
+.arrivals .arrivals-slider .box .content .price span{
+    font-size: 1.5rem;
+    color: var(--secondary-color);
+    text-decoration: line-through;
+}
+
+.arrivals .arrivals-slider .box .content .starts i{
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+/* new arrivals section end */
 
 
 

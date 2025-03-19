@@ -286,6 +286,239 @@
     </section>
     <!-- featured section end-->
 
+	    <!-- new arrivals section -->
+    <section class="arrivals" id="new-arrivals">
+        <h1 class="heading"><span>new arrivals</span></h1>
+
+        <!-- slider 1 -->
+        <div class="swiper arrivals-slider">
+            <div class="swiper-wrapper">
+                <!-- item 1 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 118,999.00 <span>LKR 120,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 2 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 140,999.00 <span>LKR 150,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 3 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 120,999.00 <span>LKR 135,999.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 4 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 98,999.00 <span>LKR 99,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 5 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 48,999.00 <span>LKR 50,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 6 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 89,999.00 <span>LKR 100,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <!-- slider 2 -->
+        <div class="swiper arrivals-slider">
+            <div class="swiper-wrapper">
+                <!-- item 1 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-6.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 235,000.00 <span>LKR 245,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 2 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-5.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 180,000.00 <span>LKR 190,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 3 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-4.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 213,000.00 <span>LKR 220,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 4 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-3.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 115,000.00 <span>LKR 120,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 5 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-2.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 155,000.00 <span>LKR 160,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+
+                <!-- item 6 -->
+                <a href="#" class="swiper-slide box">
+                    <div class="image">
+                        <img src="image/music-1.png" alt="">
+                    </div>
+                    <div class="content">
+                        <h3>new arrivals</h3>
+                        <div class="price">LKR 220,000.00 <span>LKR 225,000.00</span></div>
+                        <div class="starts">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+    </section>
+    <!-- new arrivals section end -->
+    
 
 
 
