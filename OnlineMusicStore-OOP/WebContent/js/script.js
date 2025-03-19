@@ -1,4 +1,4 @@
-// search bar
+// SEARCH BAR TOGGLE
 searchForm = document.querySelector(".search-form");
 
 document.querySelector("#search-btn").onclick = () => {
@@ -9,7 +9,7 @@ document.querySelector("#search-btn").onclick = () => {
 
 document.addEventListener('DOMContentLoaded', () => {
   // Load login form
-  fetch('login.html')
+  fetch('login.jsp')
       .then(response => response.text())
       .then(data => {
           document.getElementById('login-container').innerHTML = data;
@@ -17,7 +17,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
   // Load register form
-  fetch('register.html')
+  fetch('register.jsp')
       .then(response => response.text())
       .then(data => {
           document.getElementById('reg-container').innerHTML = data;
@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
 
   // Load forget password form
-  fetch('forgetpw.html')
+  fetch('forgetpw.jsp')
       .then(response => response.text())
       .then(data => {
           document.getElementById('forgetpw-container').innerHTML = data;
