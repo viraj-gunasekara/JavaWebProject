@@ -9,10 +9,10 @@ OOP Java Web Application With DB Conn
 * MySQL Workbench CE - v8
 
 ## Other
-* CSS     = Write from scratch
-* Icons   = Font Awwesome v4 v5
-* Fonts   = Google fonts - poppins
-* Slider Transitions = Swiper Js v11
+* CSS      - Written from scratch
+* Icons    - Font Awwesome v4 v5
+* Fonts    - Google fonts - poppins
+* Slider Transitions - Swiper Js v11
 
 ## Resourses
 * Documentations, Google images, PNG image websites, Canva
