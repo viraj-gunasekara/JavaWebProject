@@ -7,78 +7,80 @@
 <title>TonesAndTunes Music Store</title>
 <%@include file="includes/header.jsp"%>
 </head>
+
 <body>
+    <!-- header start -->
+    <header class="header">
+        <div class="header-1">
+            <a href="index.html" class="logo"> <i class="fas fa-music"> Tones & Tunes </i></a>
 
-	<!-- header start -->
-	<header class="header">
-	<div class="header-1">
-		<a href="index.html" class="logo"> <i class="fas fa-music">
-				Tones & Tunes </i></a>
+            <form action="" class="search-form">
+                <input type="search" name="" placeholder="search here..." id="search-box">
+                <label for="search-box" class="fas fa-search"></label>
+                <div id="search-results" class="search-dropdown"></div>
+            </form>
 
-		<form action="" class="search-form">
-			<input type="search" name="" placeholder="search here..."
-				id="search-box"> <label for="search-box"
-				class="fas fa-search"></label>
-			<div id="search-results" class="search-dropdown"></div>
-		</form>
+            <div class="icons">
+                <div id="search-btn" class="fas fa-search"></div>
+                <a href="#" class="fas fa-heart"></a>
+                <a href="#" id="cart-btn" class="fas fa-shopping-cart"></a>
+                <div id="login-btn" class="fas fa-user"></div>
+            </div>
+        </div>
 
-		<div class="icons">
-			<div id="search-btn" class="fas fa-search"></div>
-			<a href="#" class="fas fa-heart"></a> <a href="#" id="cart-btn"
-				class="fas fa-shopping-cart"></a>
-			<div id="login-btn" class="fas fa-user"></div>
-		</div>
-	</div>
+        <!-- Cart Panel Placeholder -->
+        <div id="cart-container"></div>
 
-	<!-- Cart Panel Placeholder -->
-	<div id="cart-container"></div>
+        <!-- header 2  -->
+        <div class="header-2">
+            <nav class="navbar">
+                <a href="#home">home</a>
+                <a href="allproducts.html">All Products</a>
+                <div class="dropdown">
+                    <a href="#" class="dropbtn">Categories <i class="fas fa-chevron-down"></i></a>
+                    <div class="dropdown-content">
+                        <a href="allproducts.html?category=string-instruments" data-category="string-instruments"><i
+                                class="fas fa-guitar"></i> String Instruments<i
+                                class="side-arrow fas fa-chevron-right"></i></a>
+                        <a href="allproducts.html?category=drums-percussion" data-category="drums-percussion"><i
+                                class="fas fa-drum"></i> Drums & Percussion<i
+                                class="side-arrow fas fa-chevron-right"></i></a>
+                        <a href="allproducts.html?category=keyboard-piano" data-category="keyboard-piano"><i
+                                class="fas fa-keyboard"></i> Keyboards & Pianos<i
+                                class="side-arrow fas fa-chevron-right"></i></a>
+                        <a href="allproducts.html?category=home-audio" data-category="home-audio"><i
+                                class="fas fa-volume-up"></i> Home Audio<i
+                                class="side-arrow fas fa-chevron-right"></i></a>
+                        <a href="allproducts.html?category=studio-recording" data-category="studio-recording"><i
+                                class="fas fa-microphone"></i> Studio & Recording<i
+                                class="side-arrow fas fa-chevron-right"></i></a>
+                    </div>
+                </div>
+                <a href="#featured">featured</a>
+                <a href="#new-arrivals">new arrivals</a>
+                <a href="#reviews">reviews</a>
+            </nav>
+        </div>
+    </header>
+    <!-- header end -->
 
-	<!-- header 2  -->
-	<div class="header-2">
-		<nav class="navbar"> <a href="#home">home</a> <a
-			href="allproducts.html">All Products</a>
-		<div class="dropdown">
-			<a href="#" class="dropbtn">Categories <i
-				class="fas fa-chevron-down"></i></a>
-			<div class="dropdown-content">
-				<a href="allproducts.html?category=string-instruments"
-					data-category="string-instruments"><i class="fas fa-guitar"></i>
-					String Instruments<i class="side-arrow fas fa-chevron-right"></i></a> <a
-					href="allproducts.html?category=drums-percussion"
-					data-category="drums-percussion"><i class="fas fa-drum"></i>
-					Drums & Percussion<i class="side-arrow fas fa-chevron-right"></i></a> <a
-					href="allproducts.html?category=keyboard-piano"
-					data-category="keyboard-piano"><i class="fas fa-keyboard"></i>
-					Keyboards & Pianos<i class="side-arrow fas fa-chevron-right"></i></a> <a
-					href="allproducts.html?category=home-audio"
-					data-category="home-audio"><i class="fas fa-volume-up"></i>
-					Home Audio<i class="side-arrow fas fa-chevron-right"></i></a> <a
-					href="allproducts.html?category=studio-recording"
-					data-category="studio-recording"><i class="fas fa-microphone"></i>
-					Studio & Recording<i class="side-arrow fas fa-chevron-right"></i></a>
-			</div>
-		</div>
-		<a href="#featured">featured</a> <a href="#new-arrivals">new
-			arrivals</a> <a href="#reviews">reviews</a> </nav>
-	</div>
-	</header>
-	<!-- header end -->
+    <!-- small displays - bottom navbar -->
+    <nav class="bottom-navbar">
+        <a href="#home" class="fas fa-home"></a>
+        <a href="#featured" class="fas fa-list"></a>
+        <a href="#new-arrivals" class="fas fa-tags"></a>
+        <a href="#reviews" class="fas fa-comments"></a>
+    </nav>
+    <!-- small displays - bottom navbar end -->
 
-	<!-- small displays - bottom navbar -->
-	<nav class="bottom-navbar"> <a href="#home" class="fas fa-home"></a>
-	<a href="#featured" class="fas fa-list"></a> <a href="#new-arrivals"
-		class="fas fa-tags"></a> <a href="#reviews" class="fas fa-comments"></a>
-	</nav>
-	<!-- small displays - bottom navbar end -->
+    <!-- Login Placeholder -->
+    <div id="login-container"></div>
+    
+    <!-- Reg Placeholder -->
+    <div id="reg-container"></div>
 
-	<!-- Login Placeholder -->
-	<div id="login-container"></div>
-
-	<!-- Reg Placeholder -->
-	<div id="reg-container"></div>
-
-	<!-- ForgetPw Placeholder -->
-	<div id="forgetpw-container"></div>
+    <!-- ForgetPw Placeholder -->
+    <div id="forgetpw-container"></div>
 
     <!-- home section -->
     <section class="home" id="home">
@@ -108,8 +110,8 @@
 
     </section>
     <!-- home section end -->
-    
-        <!-- icons section -->
+
+    <!-- icons section -->
     <section class="icons-container">
         <div class="icons">
             <i class="fas fa-truck"></i>
@@ -152,7 +154,7 @@
         </div>
     </section>
     <!-- icons section end -->
-    
+
     <!-- featured section -->
     <section class="featured" id="featured">
         <h1 class="heading"> <span>featured instruments </span></h1>
@@ -286,7 +288,7 @@
     </section>
     <!-- featured section end-->
 
-	    <!-- new arrivals section -->
+    <!-- new arrivals section -->
     <section class="arrivals" id="new-arrivals">
         <h1 class="heading"><span>new arrivals</span></h1>
 
@@ -518,13 +520,100 @@
 
     </section>
     <!-- new arrivals section end -->
-    
 
+    <!-- middle image section -->
+    <section class="middle-image">
 
+    </section>
+    <!-- middle image section end -->
 
+    <!-- reviews section -->
+    <section class="reviews" id="reviews">
+        <h1 class="heading"><span>buyer's reviews</span></h1>
+        <div class="swiper reviews-slider">
+            <div class="swiper-wrapper">
+                <!-- person 1 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-1.png" alt="">
+                    <h3>Isuni Devindi</h3>
+                    <p>Good site to select from a variety of electrical music items. Prices are reasonable.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
 
+                <!-- person 2 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-2.png" alt="">
+                    <h3>Nuwan Chamara</h3>
+                    <p>Site is super friendly. There had brief introduction of how to and what to choose.
+                        Thanks for the service and I recommend.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
 
+                <!-- person 3 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-3.png" alt="">
+                    <h3>Ridmi Kawya</h3>
+                    <p>Great site to buy musical instruments, But delivery price is bit overpriced</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
 
+                <!-- person 4 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-4.png" alt="">
+                    <h3>Nayomi Ranweera</h3>
+                    <p>They got vast selection of guitars for rent and sell: classic, acoustic, semi acoustic and
+                        electric.
+                        Bass guitar, Sri Lanka drums, cellos, violin and more.
+                        Worth checking!</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star-half-alt"></i>
+                    </div>
+                </div>
+
+                <!-- person 5 -->
+                <div class="swiper-slide box">
+                    <img src="image/person-5.png" alt="">
+                    <h3>Hirun Prabashwara</h3>
+                    <p>This is your only option for getting an electric or acoustic guitar, strings, Cajon, even
+                        amplifiers.
+                        Site is always super helpful, and has fair prices.</p>
+                    <div class="stars">
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                        <i class="fas fa-star"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- reviews section end -->
+
+	<!-- footer section -->
 	<%@include file="includes/footer.jsp"%>
 </body>
 </html>

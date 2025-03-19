@@ -695,18 +695,62 @@ section{
 
 /* new arrivals section end */
 
+/* middle image section */
+.middle-image{
+    background: url(../image/image-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    height: 20rem;
+}
 
+/* middle image section end */
 
+/* reviews section */
+.reviews .reviews-slider .box{
+    border: var(--border);
+    padding: 2rem;
+    text-align: center;
+}
 
+.reviews .reviews-slider .box:hover{
+    border: var(--border-hover);
+}
 
+.reviews .reviews-slider .box img{
+    height: 7rem;
+    width: 7rem;
+    border-radius: 50%;
+    object-fit: cover;
+}
 
+.reviews .reviews-slider .box h3{
+    color: var(--black);
+    font-size: 2.2rem;
+    padding: .5rem 0;
+}
 
+.reviews .reviews-slider .box p{
+    color: var(--secondary-color);
+    font-size: 1.4rem;
+    padding: 1rem 0;
+    line-height: 2;
+    display: -webkit-box;
+    -webkit-line-clamp: 2;        /* Only show 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    
+    line-height: 1.4;             /* Adjust line spacing (1.4 works well) */
+    max-height: calc(1.9em * 2); 
 
+}
 
-
-
-
-
+.reviews .reviews-slider .box .stars i{
+    padding-top: 1rem;
+    font-size: 1.7rem;
+    color: var(--primary-color);
+}
+/* reviews section end */
 
 /* footer section */
 .footer{
@@ -787,6 +831,39 @@ section{
 }
 
 /* footer section end*/
+
+/* loader */
+.loader-container{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 10000;
+    background: #f7f7f7;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.loader-container.active{
+    display: none;
+}
+
+.loader-container img{
+    height: 30rem;
+}
+
+/* loader end */
+
+
+
+
+
+
+
+
+
 
 
 
