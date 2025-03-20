@@ -14,12 +14,14 @@
 
 		<div id="close-login-btn" class="fas fa-times"></div>
 
-		<form action="">
+		<!-- When user submit the form it will goes to Login servlet -->
+		<form action="LoginServlet" method="post">
 			<h3>sign in</h3>
-			<span>username</span> <input type="email" name="" class="box"
-				placeholder="enter your email" id=""> <span>password</span>
-			<input type="password" name="" class="box"
-				placeholder="enter your password" id="">
+			<span>email</span> <input type="email" name="login-email" class="box"
+				placeholder="enter your email" id="" required> 
+			<span>password</span>
+			<input type="password" name="login-password" class="box"
+				placeholder="enter your password" id="" required>
 			<div class="checkbox">
 				<input type="checkbox" name="" id="remember-me"> <label
 					for="remember-me">remember me</label>
