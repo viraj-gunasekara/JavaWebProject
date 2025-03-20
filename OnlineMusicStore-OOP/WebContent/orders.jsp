@@ -4,7 +4,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Orders:TonesAndTunes Music Store</title>
+<title>Orders: TonesAndTunes Music Store</title>
 <%@include file="includes/header.jsp" %>
 </head>
 <body>
