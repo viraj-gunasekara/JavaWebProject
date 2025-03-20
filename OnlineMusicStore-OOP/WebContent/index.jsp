@@ -10,6 +10,7 @@
 </head>
 
 <body>
+	<!-- see the db connection is established or not -->
 	<% out.print(DBConnectionPro.getCon()); %>
     <!-- header start -->
     <header class="header">

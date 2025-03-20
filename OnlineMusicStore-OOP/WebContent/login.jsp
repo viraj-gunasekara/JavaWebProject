@@ -14,7 +14,8 @@
 
 		<div id="close-login-btn" class="fas fa-times"></div>
 
-		<form action="" method="post">
+		<!-- When user submit the form it will goes to Login servlet -->
+		<form action="LoginServlet" method="post">
 			<h3>sign in</h3>
 			<span>email</span> <input type="email" name="login-email" class="box"
 				placeholder="enter your email" id="" required> 
