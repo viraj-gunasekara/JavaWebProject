@@ -17,7 +17,8 @@
 		<!-- When user submit the form it will goes to Login servlet -->
 		<form action="LoginServlet" method="post">
 			<h3>sign in</h3>
-			<span>email</span> <input type="email" name="login-email" class="box"
+			<span>email</span> 
+			<input type="email" name="login-email" class="box"
 				placeholder="enter your email" id="" required> 
 			<span>password</span>
 			<input type="password" name="login-password" class="box"
@@ -31,7 +32,7 @@
 				forget password ? <a href="#" id="forgetpw-btn">click here</a>
 			</p>
 			<p>
-				don't have an account ? <a href="#" id="reg-btn">create one</a>
+				don't have an account ? <a href="#" id="reg-btn1">create one</a>
 			</p>
 		</form>
 	</div>

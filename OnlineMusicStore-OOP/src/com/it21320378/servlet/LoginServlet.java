@@ -21,7 +21,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		/*if someone access the methods by just typing url, he redirect to*/
 		//this is security mesure
-		response.sendRedirect("index.jsp");
+		response.sendRedirect("login.jsp");
 	}
 
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,7 +30,7 @@ public class LoginServlet extends HttpServlet {
 			/*used to debug to know the servlet is working in frontend*/
 			/*out.print("this is login servlet");*/
 			
-			/*Grab the  user data when submit the form*/
+			/*Grab the  user data when submit the form, here names should match with names in the login.jsp form*/
 			String email = request.getParameter("login-email");
 			String password = request.getParameter("login-password");
 			
@@ -39,9 +39,10 @@ public class LoginServlet extends HttpServlet {
 			
 			try {
 				UserDao udao = new UserDao(DBConnectionPro.getCon());
+				
+				/*check the user login is success or not, after match with email & pw in the DB*/
 				User user = udao.userLogin(email, password);
 				
-				/*check the user login match with db email & pw*/
 				if(user != null) {
 					/*out.print("user login success");*/
 					
