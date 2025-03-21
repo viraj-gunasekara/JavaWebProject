@@ -1,6 +1,14 @@
 <%@page import="com.it21320378.DBConnectionPro"%>
+<%@page import="com.it21320378.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
+	<!-- get user session, from "auth" attribute -->
+	<% 
+	User auth = (User) request.getSession().getAttribute("auth");
+	if(auth!=null){
+		request.setAttribute("auth", auth);
+	}
+	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -11,9 +19,10 @@
 
 <body>
 	<!-- see the db connection is established or not -->
-	<% out.print(DBConnectionPro.getCon()); %>
+	<%-- <% out.print(DBConnectionPro.getCon()); %> --%>
     <!-- header start -->
     <header class="header">
+    <!-- header 1 -->
         <div class="header-1">
             <a href="index.jsp" class="logo"> <i class="fas fa-music"> Tones & Tunes </i></a>
 
@@ -23,14 +32,27 @@
                 <div id="search-results" class="search-dropdown"></div>
             </form>
 
+			<!-- here in navbar set conditions, for visible to guest & reg-users -->
             <div class="icons">
-                <div id="search-btn" class="fas fa-search"></div>
-                <a href="#" class="fas fa-heart"></a>
-                <a href="#" id="cart-btn" class="fas fa-shopping-cart"></a>
-                <div id="login-btn" class="fas fa-user"></div>
+                <div id="search-btn" class="fas fa-search"><span class="icon-name">Search</span></div>
+                <!-- <a href="#" class="fas fa-heart"><span class="icon-name">Favorite</span></a> -->
+                <!-- cart is visible to all users -->
+                <a href="#" id="cart-btn" class="fas fa-shopping-cart"><span class="icon-name">Cart</span></a>
+                
+                <!-- if a login session there, user can see these, -- else guest can see -->
+                <% if(auth != null){ %>
+                	<a href="orders.jsp" id="order-btn" class="fas fa-file-text"><span class="icon-name">Orders</span></a>
+                	<!-- when user click logout btn, LogoutServlet works and remove user session -->
+                    <a href="LogoutServlet" id="logout-btn" class="fas fa-sign-out"><span class="icon-name">Logout</span></a>
+                <% } else{ %>
+                	<div id="login-btn" class="fas fa-user"><span class="icon-name">Login</span></div>
+                <% }
+                	%>
+                
             </div>
         </div>
-
+		<!-- header 1 end -->
+		
         <!-- Cart Panel Placeholder -->
         <div id="cart-container"></div>
 

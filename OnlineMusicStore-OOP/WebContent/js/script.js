@@ -49,9 +49,9 @@ function setupLoginEvents() {
   }
 
   // If you have a button to go to register from login
-  const regBtn2 = document.querySelector('#reg-btn2');
-  if (regBtn2) {
-      regBtn2.addEventListener('click', () => {
+  const regBtn1 = document.querySelector('#reg-btn1');
+  if (regBtn1) {
+      regBtn1.addEventListener('click', () => {
           loginForm.classList.remove('active');
           document.querySelector('.reg-form-container').classList.add('active');
       });
