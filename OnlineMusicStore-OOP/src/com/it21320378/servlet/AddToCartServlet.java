@@ -34,10 +34,31 @@ public class AddToCartServlet extends HttpServlet {
 				cartList.add(cm);
 				session.setAttribute("cart-list", cartList);
 				
-				out.println("session created and added the list");
+				/*out.println("session created and added the list");*/
+				response.sendRedirect("index.jsp");
 			}else {
-				out.println("cart list exist");
+				/*out.println("cart list exist");*/
+				cartList = cart_list;
+				boolean exist = false;
+				
+				for(Cart c: cartList) {
+					/*out.println(c.getId());*/
+					if(c.getId() == id) {
+						exist= true;
+						out.println("<h3 style='color:crimson; text-align:center'>Item already exist in Cart.</h3>");
+					}
+				}
+				
+				if(!exist) {
+					cartList.add(cm);
+					/*out.println("product added");*/
+					response.sendRedirect("index.jsp");
+				}
 			}
+			
+			/*for(Cart c:cart_list) {
+				out.println(c.getId());
+			}*/
 		}
 	}
 
