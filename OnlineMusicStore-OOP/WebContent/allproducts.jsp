@@ -163,10 +163,12 @@
                     <img src="image/allprod_images/<%= p.getImage() %>" alt="">
                 </div>
                 <div class="content">
+                <div class="details">
                     <h3><%= p.getName() %></h3>
                     <p><%= p.getCategory() %></p>
                     <div class="price">LKR <%= (int)(p.getPrice()) %>.00 <br><span>LKR <%= (int)(p.getPrice()*1.1) %>.00</span></div>
-                    <a href="#" class="btn">add to cart</a>
+                 </div>
+                 <a href="#" class="btn">add to cart</a>
                 </div>
             </div>
     		<%}
