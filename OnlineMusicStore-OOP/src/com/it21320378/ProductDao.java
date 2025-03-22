@@ -28,7 +28,7 @@ public class ProductDao {
 				row.setId(rs.getInt("pid"));
 				row.setName(rs.getString("pname"));
 				row.setCategory(rs.getString("pcategory"));
-				row.setPrice(rs.getString("pprice"));
+				row.setPrice(rs.getDouble("pprice"));
 				row.setImage(rs.getString("pimage"));
 				
 				products.add(row);
