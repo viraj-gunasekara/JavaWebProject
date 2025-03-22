@@ -416,6 +416,8 @@ closeCart.addEventListener('click', () => {
 });
 
 }
+
+
 // Enable manual quantity input
 /*document.querySelectorAll('.quantity-control input').forEach(input => {
    input.addEventListener('input', function () {
