@@ -71,4 +71,28 @@ public class ProductDao {
 		
 		return products;
 	}
+	
+	/*Method to get total price of the Products in the cart*/
+	public double getTotalCartPrice(ArrayList<Cart> cartList) {
+		double sum =0;
+		
+		try {
+			if(cartList.size()>0) {
+				for(Cart item:cartList) {
+					query = "select pprice from products where pid=?";
+					pst = this.con.prepareStatement(query);
+					pst.setInt(1, item.getId());
+					rs = pst.executeQuery();
+					
+					while(rs.next()) {
+						sum += rs.getDouble("pprice")*item.getQuantity();
+					}
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return sum;
+	}
 }

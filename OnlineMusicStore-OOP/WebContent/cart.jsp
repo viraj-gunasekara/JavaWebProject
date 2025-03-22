@@ -16,7 +16,10 @@
 	if(cart_list != null){
 		ProductDao pDao = new ProductDao(DBConnectionPro.getCon());
 		cartProduct = pDao.getCartProducts(cart_list);
+		double total = pDao.getTotalCartPrice(cart_list);
+		
 		request.setAttribute("cart_list", cart_list);
+		request.setAttribute("total", total);
 	}
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,7 +50,7 @@
                     <div class="item-info">
                         <h3><%= c.getName() %></h3>
                         <p><%= c.getCategory() %></p>
-                        <p>Unit Price: LKR <%= (int)(c.getPrice()) %>.00 </p>
+                        <p>Unit Price: LKR <%= (int)(c.getPrice()) %>.00 * <%= c.getQuantity() %></p>
                     </div>
                 </div>
 
@@ -55,9 +58,9 @@
 					<input type="hidden" name="id" value="<%= c.getId() %>">
 					<div class="item-actions">
 						<div class="quantity-control">
-                        	<a href=""><button class="qty-btn">-</button></a>
+                        	<a href="QuantityIncDecServlet" class="qty-btn">-</a>
                         	<input type="text" name="quantity" value="1">
-                        	<a href=""><button class="qty-btn">+</button></a>
+                        	<a href="QuantityIncDecServlet" class="qty-btn">+</a>
                     	</div>
 					</div>
 					<p class="item-total">Total: LKR </p>
@@ -70,7 +73,7 @@
         %>
 
             <div class="cart-footer">
-                <h3>Grand Total: LKR <span id="grand-total">45,500.00</span></h3>
+                <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?total:0.0 }</span></h3>
                 <button class="checkout-btn">Checkout</button>
             </div>
         </div>
