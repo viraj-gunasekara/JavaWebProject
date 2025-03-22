@@ -1,4 +1,5 @@
 <%@page import="com.it21320378.*"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<!-- get user session, from "auth" attribute -->
@@ -7,6 +8,10 @@
 	if(auth!=null){
 		request.setAttribute("auth", auth);
 	}
+	
+	ProductDao pd = new ProductDao(DBConnectionPro.getCon());
+	
+	List<Product> products = pd.getAllProducts();
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -158,7 +163,7 @@
                     <div class="content">
                         <h3>Aria A-35CE Classical Guitar</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 59,000.00 <br><span>LKR 61,000.00</span></div>
+                        <div class="price">LKR 59000.00 <br><span>LKR 61,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -175,7 +180,7 @@
                     <div class="content">
                         <h3>Epiphone Les Electric Guitar</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 75,000.00 <br><span>LKR 81,000.00</span></div>
+                        <div class="price">LKR 75000.00 <br><span>LKR 81,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -192,7 +197,7 @@
                     <div class="content">
                         <h3>Fender Dread nought Guitar</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 98,000.00 <br><span>LKR 100,000.00</span></div>
+                        <div class="price">LKR 98000.00 <br><span>LKR 100,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -209,7 +214,7 @@
                     <div class="content">
                         <h3>Ibanez GRX70QA Electric Guitar</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 82,000.00 <br><span>LKR 89,000.00</span></div>
+                        <div class="price">LKR 82000.00 <br><span>LKR 89,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -226,7 +231,7 @@
                     <div class="content">
                         <h3>Yamaha F310 Acoustic Guitar</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 45,500.00 <br><span>LKR 55,000.00</span></div>
+                        <div class="price">LKR 45500.00 <br><span>LKR 55,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -243,7 +248,7 @@
                     <div class="content">
                         <h3>Yamaha Student Violin</h3>
                         <p>string-instruments</p>
-                        <div class="price">LKR 85,000.00 <br><span>LKR 89,000.00</span></div>
+                        <div class="price">LKR 85000.00 <br><span>LKR 89,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -261,7 +266,7 @@
                     <div class="content">
                         <h3>Pearl Roadshow Drum Kit</h3>
                         <p>drums-percussion</p>
-                        <div class="price">LKR 235,000.00 <br><span>LKR 255,000.00</span></div>
+                        <div class="price">LKR 235000.00 <br><span>LKR 255,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -278,7 +283,7 @@
                     <div class="content">
                         <h3>Roland Sampling Pad</h3>
                         <p>drums-percussion</p>
-                        <div class="price">LKR 210,000.00 <br><span>LKR 215,000.00</span></div>
+                        <div class="price">LKR 210000.00 <br><span>LKR 215,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -295,7 +300,7 @@
                     <div class="content">
                         <h3>Yamaha Birch Drum Set</h3>
                         <p>drums-percussion</p>
-                        <div class="price">LKR 295,000.00 <br><span>LKR 315,000.00</span></div>
+                        <div class="price">LKR 295000.00 <br><span>LKR 315,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -312,7 +317,7 @@
                     <div class="content">
                         <h3>Alesis Electronic Drum Kit</h3>
                         <p>drums-percussion</p>
-                        <div class="price">LKR 185,000.00 <br><span>LKR 215,000.00</span></div>
+                        <div class="price">LKR 185000.00 <br><span>LKR 215,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -329,7 +334,7 @@
                     <div class="content">
                         <h3>Meinl HCS X4 Cymbal Pack</h3>
                         <p>drums-percussion</p>
-                        <div class="price">LKR 85,000.00 <br><span>LKR 105,000.00</span></div>
+                        <div class="price">LKR 85000.00 <br><span>LKR 105,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -348,7 +353,7 @@
                     <div class="content">
                         <h3>Roland Digital Piano</h3>
                         <p>keyboard-piano</p>
-                        <div class="price">LKR 245,000.00 <br><span>LKR 255,000.00</span></div>
+                        <div class="price">LKR 245000.00 <br><span>LKR 255,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -365,7 +370,7 @@
                     <div class="content">
                         <h3>Yamaha P-125 Digital Piano</h3>
                         <p>keyboard-piano</p>
-                        <div class="price">LKR 225,000.00 <br><span>LKR 255,000.00</span></div>
+                        <div class="price">LKR 225000.00 <br><span>LKR 255,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -382,7 +387,7 @@
                     <div class="content">
                         <h3>Korg Professional Arranger</h3>
                         <p>keyboard-piano</p>
-                        <div class="price">LKR 365,000.00 <br><span>LKR 395,000.00</span></div>
+                        <div class="price">LKR 365000.00 <br><span>LKR 395,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -399,7 +404,7 @@
                     <div class="content">
                         <h3>Casio Portable Keyboard</h3>
                         <p>keyboard-piano</p>
-                        <div class="price">LKR 120,000.00 <br><span>LKR 150,000.00</span></div>
+                        <div class="price">LKR 120000.00 <br><span>LKR 150,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -416,7 +421,7 @@
                     <div class="content">
                         <h3>Alesis Recital Digital Piano</h3>
                         <p>keyboard-piano</p>
-                        <div class="price">LKR 190,000.00 <br><span>LKR 245,000.00</span></div>
+                        <div class="price">LKR 190000.00 <br><span>LKR 245,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -435,7 +440,7 @@
                     <div class="content">
                         <h3>Bose Wireless Speaker</h3>
                         <p>home-audio</p>
-                        <div class="price">LKR 175,000.00 <br><span>LKR 200,000.00</span></div>
+                        <div class="price">LKR 175000.00 <br><span>LKR 200,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -452,7 +457,7 @@
                     <div class="content">
                         <h3>Harman Kardon Speaker</h3>
                         <p>home-audio</p>
-                        <div class="price">LKR 125,000.00 <br><span>LKR 150,000.00</span></div>
+                        <div class="price">LKR 125000.00 <br><span>LKR 150,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -469,7 +474,7 @@
                     <div class="content">
                         <h3>JBL Surround Soundbar</h3>
                         <p>home-audio</p>
-                        <div class="price">LKR 325,000.00 <br><span>LKR 355,000.00</span></div>
+                        <div class="price">LKR 325000.00 <br><span>LKR 355,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -486,7 +491,7 @@
                     <div class="content">
                         <h3>Sony Home Theater System</h3>
                         <p>home-audio</p>
-                        <div class="price">LKR 215,000.00 <br><span>LKR 255,000.00</span></div>
+                        <div class="price">LKR 315000.00 <br><span>LKR 255,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -505,7 +510,7 @@
                     <div class="content">
                         <h3>AKG Condenser Microphone</h3>
                         <p>studio-recording</p>
-                        <div class="price">LKR 395,000.00 <br><span>LKR 415,000.00</span></div>
+                        <div class="price">LKR 295000.00 <br><span>LKR 415,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -523,7 +528,7 @@
                     <div class="content">
                         <h3>Focusrite Audio Interface</h3>
                         <p>studio-recording</p>
-                        <div class="price">LKR 79,000.00 <br><span>LKR 89,000.00</span></div>
+                        <div class="price">LKR 79000.00 <br><span>LKR 89,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -541,7 +546,7 @@
                     <div class="content">
                         <h3>Neuman Condenser Mic</h3>
                         <p>studio-recording</p>
-                        <div class="price">LKR 520,000.00 <br><span>LKR 540,000.00</span></div>
+                        <div class="price">LKR 190000.00 <br><span>LKR 540,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -558,7 +563,7 @@
                     <div class="content">
                         <h3>Rode Condenser Microphone</h3>
                         <p>studio-recording</p>
-                        <div class="price">LKR 95,000.00 <br><span>LKR 100,000.00</span></div>
+                        <div class="price">LKR 95000.00 <br><span>LKR 100,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
@@ -575,7 +580,7 @@
                     <div class="content">
                         <h3>Shure Vocal Microphone</h3>
                         <p>studio-recording</p>
-                        <div class="price">LKR 185,000.00 <br><span>LKR 195,000.00</span></div>
+                        <div class="price">LKR 185000.00 <br><span>LKR 195,000.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
