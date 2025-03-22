@@ -1,5 +1,6 @@
 <%@page import="com.it21320378.DBConnectionPro"%>
 <%@page import="com.it21320378.*"%>
+<%@page import="java.util.List"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<!-- get user session, from "auth" attribute -->
@@ -8,6 +9,10 @@
 	if(auth!=null){
 		request.setAttribute("auth", auth);
 	}
+	
+	ProductDao pd = new ProductDao(DBConnectionPro.getCon());
+	
+	List<Product> products = pd.getAllProducts();
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
@@ -186,125 +191,30 @@
 
         <div class="swiper featured-slider">
             <div class="swiper-wrapper">
-                <!-- item 1 -->
-                <div class="box swiper-slide" data-category="string-instruments">
+            
+            <%
+    	if( !products.isEmpty()){
+    		for(Product p:products){%>
+    			<div class="box swiper-slide" data-category="<%= p.getCategory() %>">
                     <div class="icons">
                         <a href="#" class="fas fa-search"></a>
                         <a href="#" class="fas fa-heart"></a>
                         <a href="#" class="fas fa-eye"></a>
                     </div>
                     <div class="image">
-                        <img src="image/allprod_images/1-Yamaha F310 Acoustic Guitar.png" alt="">
+                        <img src="image/allprod_images/<%= p.getImage() %>" alt="">
                     </div>
                     <div class="content">
-                        <h3>Yamaha Acoustic Guitar</h3>
-                        <p>string-instruments</p>
-                        <div class="price">LKR 45,500.00 <br><span>LKR 55,000.00</span></div>
+                        <h3><%= p.getName() %></h3>
+                        <p><%= p.getCategory() %></p>
+                        <div class="price">LKR <%= (int)(p.getPrice()) %>.00 <br><span>LKR <%= (int)(p.getPrice()*1.1) %>.00</span></div>
                         <a href="#" class="btn">add to cart</a>
                     </div>
                 </div>
-                <!-- item 2 -->
-                <div class="box swiper-slide" data-category="drums-percussion">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/2-Pearl Roadshow 5-Piece Drum Kit.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Pearl Roadshow Drum Kit</h3>
-                        <p>drums-percussion</p>
-                        <div class="price">LKR 235,000.00 <br><span>LKR 255,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-                <!-- item 3 -->
-                <div class="box swiper-slide" data-category="keyboard-piano">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/3-Yamaha P-125 Digital Piano.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Yamaha Digital Piano</h3>
-                        <p>keyboard-piano</p>
-                        <div class="price">LKR 225,000.00 <br><span>LKR 255,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-                <!-- item 4 -->
-                <div class="box swiper-slide" data-category="string-instruments">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/1-Yamaha V3 Series Student Violin.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Yamaha Student Violin</h3>
-                        <p>string-instruments</p>
-                        <div class="price">LKR 85,000.00 <br><span>LKR 89,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-                <!-- item 5 -->
-                <div class="box swiper-slide" data-category="home-audio">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/4-JBL Bar 9.1 True Wireless Surround Soundbar.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>JBL Surround Soundbar</h3>
-                        <p>home-audio</p>
-                        <div class="price">LKR 325,000.00 <br><span>LKR 355,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-                <!-- item 6 -->
-                <div class="box swiper-slide" data-category="studio-recording">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/5-Rode NT1-A Condenser Microphone.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Rode Microphone</h3>
-                        <p>studio-recording</p>
-                        <div class="price">LKR 95,000.00 <br><span>LKR 100,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
-                <!-- item 7 -->
-                <div class="box swiper-slide" data-category="home-audio">
-                    <div class="icons">
-                        <a href="#" class="fas fa-search"></a>
-                        <a href="#" class="fas fa-heart"></a>
-                        <a href="#" class="fas fa-eye"></a>
-                    </div>
-                    <div class="image">
-                        <img src="image/allprod_images/4-Harman Kardon Aura Studio 3 Bluetooth Speaker.png" alt="">
-                    </div>
-                    <div class="content">
-                        <h3>Harman Kardon Speaker</h3>
-                        <p>home-audio</p>
-                        <div class="price">LKR 125,000.00 <br><span>LKR 150,000.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
-                    </div>
-                </div>
+    		<%}
+    	}
+    	%>
+
             </div>
 
             <div class="swiper-button-next"></div>
