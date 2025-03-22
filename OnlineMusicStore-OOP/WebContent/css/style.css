@@ -937,7 +937,8 @@ section{
     text-align: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
+    height: 500px;
+    background: #eee;
 }
 
 .all-prod .all-prod-slider .prod-box:hover{
@@ -984,18 +985,31 @@ section{
 
 .all-prod .all-prod-slider .prod-box .content{
     background: #eee;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    flex-grow: 1; 
     padding: 1.5rem;
 }
 
 .all-prod .all-prod-slider .prod-box .content h3{
     font-size: 1.7rem;
     color: var(--black);
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    margin-bottom: 1rem;
+}
+
+.all-prod .all-prod-slider .prod-box .content p {
+    font-size: 1.2rem;
+    margin-bottom: .5rem;
 }
 
 .all-prod .all-prod-slider .prod-box .content .price{
     font-size: 1.9rem;
     color: var(--black);
     padding-top: 1rem;
+
 }
 
 .all-prod .all-prod-slider .prod-box .content .price span{
@@ -1004,6 +1018,19 @@ section{
     text-decoration: line-through;
 }
 
+.all-prod .all-prod-slider .prod-box .content .details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 0.5rem;
+}
+
+.all-prod .all-prod-slider .prod-box .content .btn {
+    margin-top: auto;
+    align-self: center; 
+
+}
 /* all products end */
 
 /* pagination */
