@@ -394,8 +394,8 @@ fetch('cart.jsp')
    });
 });
 
-//cart event listeners
-/*function setupCartEvents() {
+//cart event listeners - to view cart & close cart
+function setupCartEvents() {
 const cartBtn = document.getElementById('cart-btn');
 const cartPanel = document.getElementById('cart-panel');
 const closeCart = document.getElementById('close-cart');
@@ -405,11 +405,19 @@ if (!cartBtn || !cartPanel || !closeCart) {
    return;
 }
 
-cartBtn.addEventListener('click', () => cartPanel.classList.add('active'));
-closeCart.addEventListener('click', () => cartPanel.classList.remove('active'));
+// Show cart when clicking cart icon
+cartBtn.addEventListener('click', () => {
+  cartPanel.classList.add('active');
+});
 
+// Close cart when clicking close icon
+closeCart.addEventListener('click', () => {
+  cartPanel.classList.remove('active');
+});
+
+}
 // Enable manual quantity input
-document.querySelectorAll('.quantity-control input').forEach(input => {
+/*document.querySelectorAll('.quantity-control input').forEach(input => {
    input.addEventListener('input', function () {
        let id = this.id.split('-')[1];
        let newQty = parseInt(this.value) || 1;
