@@ -208,7 +208,8 @@
                         <h3><%= p.getName() %></h3>
                         <p><%= p.getCategory() %></p>
                         <div class="price">LKR <%= (int)(p.getPrice()) %>.00 <br><span>LKR <%= (int)(p.getPrice()*1.1) %>.00</span></div>
-                        <a href="#" class="btn">add to cart</a>
+                        <!-- when click Addtocart btn, AddToCartServlet works and create item session -->
+                        <a href="AddToCartServlet?pid=<%= p.getId() %>" class="btn">add to cart</a>
                     </div>
                 </div>
     		<%}

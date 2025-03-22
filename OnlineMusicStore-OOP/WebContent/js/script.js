@@ -395,7 +395,7 @@ fetch('cart.jsp')
 });
 
 //cart event listeners
-function setupCartEvents() {
+/*function setupCartEvents() {
 const cartBtn = document.getElementById('cart-btn');
 const cartPanel = document.getElementById('cart-panel');
 const closeCart = document.getElementById('close-cart');
@@ -455,6 +455,6 @@ function removeItem(id) {
  document.querySelector('.cart-item').remove();
  delete quantities[id];
  updateGrandTotal();
-}
+}*/
 
 //CART END

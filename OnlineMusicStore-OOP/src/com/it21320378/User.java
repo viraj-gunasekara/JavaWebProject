@@ -1,5 +1,5 @@
 package com.it21320378;
-/*Create User.java bean(class) */
+/*Create User.java bean(model)(class) */
 /*Beans are primarily used in Java EE applications to represent data objects*/
 
 public class User {
