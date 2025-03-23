@@ -72,6 +72,32 @@ public class ProductDao {
 		return products;
 	}
 	
+	/*Method to get single product details from the product table*/
+	public Product getSingleProduct(int id) {
+		Product row = null;
+		
+		try {
+			query = "select * from products where pid=?";
+			pst = this.con.prepareStatement(query);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				row = new Product();
+				row.setId(rs.getInt("pid"));
+				row.setName(rs.getString("pname"));
+				row.setCategory(rs.getString("pcategory"));
+				row.setPrice(rs.getDouble("pprice"));
+				row.setImage(rs.getString("pimage"));
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return row;
+	}
+	
 	/*Method to get total price of the Products in the cart*/
 	public double getTotalCartPrice(ArrayList<Cart> cartList) {
 		double sum =0;

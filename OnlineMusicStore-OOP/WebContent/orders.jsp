@@ -1,12 +1,19 @@
 <%@page import="com.it21320378.*"%>
 <%@page import="java.util.*"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 <!-- get user session, from "auth" attribute -->
-<%
+	<%
+	DecimalFormat dcf = new DecimalFormat("#,##0.00");
+	request.setAttribute("dcf", dcf);
+
 	User auth = (User) request.getSession().getAttribute("auth");
+	List<Order> orders = null;
+	
 	if (auth != null) {
 		request.setAttribute("auth", auth);
+		orders = new OrderDao(DBConnectionPro.getCon()).userOrders(auth.getId());
 	}
 
 	ProductDao pd = new ProductDao(DBConnectionPro.getCon());
@@ -146,33 +153,20 @@
 				</tr>
 			</thead>
 			<tbody>
+			<% 
+			if(orders != null){
+				for(Order o:orders){ %>
 				<tr>
-					<td>2025-03-23</td>
-					<td>Exclusive Digital Artwork</td>
-					<td>Digital Art</td>
-					<td>1</td>
-					<td>$250</td>
-					<td><button class="cancel-btn">Cancel Order</button></td>
+					<td><%= o.getDate() %></td>
+					<td><%= o.getName() %></td>
+					<td><%= o.getCategory() %></td>
+					<td><%= o.getItemQuantity() %></td>
+					<td><%= o.getPrice() %></td>
+					<td><a class="cancel-btn" href="CancelOrderServlet?oid=<%= o.getDate() %>">Cancel Order</a></td>
 				</tr>
-				
-				
-				<tr>
-					<td>2025-03-23</td>
-					<td>Exclusive Digital Artwork</td>
-					<td>Digital Art</td>
-					<td>1</td>
-					<td>$250</td>
-					<td><button class="cancel-btn">Cancel Order</button></td>
-				</tr>
-				<tr>
-					<td>2025-03-23</td>
-					<td>Exclusive Digital Artwork</td>
-					<td>Digital Art</td>
-					<td>1</td>
-					<td>$250</td>
-					<td><button class="cancel-btn">Cancel Order</button></td>
-				</tr>
-				
+				<%}
+			}
+			%>				
 			</tbody>
 		</table>
 	</div>

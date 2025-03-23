@@ -3,9 +3,10 @@ package com.it21320378;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.*;
 
-/*import order model*/
-import com.it21320378.Order;
+/*import models*/
+import com.it21320378.*;
 
 public class OrderDao {
 	private Connection con;
@@ -43,5 +44,40 @@ public class OrderDao {
 		
 		// Return the order object (false if order failed)
 		return result;
+	}
+	
+	
+	/*method to retrieve all the order info from db table*/
+	public List<Order> userOrders(int id){
+		List<Order> list = new ArrayList<>();
+		
+		try {
+			/*SQL query to get all orders, of a user, from Order Table, in decending order*/
+			query = "select * from orders where uid=? order by orders.oid desc";
+			pst = this.con.prepareStatement(query);
+			pst.setInt(1, id);
+			rs = pst.executeQuery();
+			
+			while(rs.next()) {
+				Order order = new Order();
+				ProductDao productDao = new ProductDao(this.con);
+				int pId = rs.getInt("pid");
+				
+				Product product = productDao.getSingleProduct(pId);
+				order.setOrderId(rs.getInt("oid"));
+				order.setId(pId);
+				order.setName(product.getName());
+				order.setCategory(product.getCategory());
+				order.setPrice(product.getPrice()*rs.getInt("o_itemquantity"));
+				order.setItemQuantity(rs.getInt("o_itemquantity"));
+				order.setDate(rs.getString("odate"));
+				list.add(order);
+			}
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return list;
 	}
 }
