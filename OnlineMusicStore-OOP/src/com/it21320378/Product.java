@@ -2,7 +2,7 @@ package com.it21320378;
 /*Create Products.java bean(model)(class) */
 
 public class Product {
-	/*in databse you need to have exactly these columns*/
+	/*in databse you need to have these columns*/
 	private int id;
 	private String name;
 	private String category;
