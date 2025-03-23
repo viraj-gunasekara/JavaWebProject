@@ -1,11 +1,14 @@
 <%@page import="com.it21320378.DBConnectionPro"%>
 <%@page import="com.it21320378.*"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.*"%>
+<%@page import="java.text.DecimalFormat"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 	<!-- get user session, from "auth" attribute -->
 	<% 
+	DecimalFormat dcf = new DecimalFormat("#,##0.00");
+	request.setAttribute("dcf", dcf);
+	
 	User auth = (User) request.getSession().getAttribute("auth");
 	if(auth!=null){
 		request.setAttribute("auth", auth);
@@ -16,7 +19,10 @@
 	if(cart_list != null){
 		ProductDao pDao = new ProductDao(DBConnectionPro.getCon());
 		cartProduct = pDao.getCartProducts(cart_list);
+		double total = pDao.getTotalCartPrice(cart_list);
+		
 		request.setAttribute("cart_list", cart_list);
+		request.setAttribute("total", total);
 	}
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -47,7 +53,7 @@
                     <div class="item-info">
                         <h3><%= c.getName() %></h3>
                         <p><%= c.getCategory() %></p>
-                        <p>Unit Price: LKR <%= (int)(c.getPrice()) %>.00 </p>
+                        <p>Unit Price: LKR <%= dcf.format(c.getPrice()) %> X <%= c.getQuantity() %></p>
                     </div>
                 </div>
 
@@ -55,13 +61,15 @@
 					<input type="hidden" name="id" value="<%= c.getId() %>">
 					<div class="item-actions">
 						<div class="quantity-control">
-                        	<a href=""><button class="qty-btn">-</button></a>
-                        	<input type="text" name="quantity" value="1">
-                        	<a href=""><button class="qty-btn">+</button></a>
+                        	<a href="QuantityIncDecServlet?action=dec&pid=<%= c.getId() %>" class="qty-btn">-</a>
+                        	<input type="text" name="quantity" value="<%= c.getQuantity() %>" readonly>
+                        	<a href="QuantityIncDecServlet?action=inc&pid=<%= c.getId() %>" class="qty-btn">+</a>
                     	</div>
 					</div>
-					<p class="item-total">Total: LKR </p>
-					<button class="cancel-btn">Remove</button>
+					<div class="price-and-remove">
+						<p class="item-total">Total: LKR <%= dcf.format(c.getPrice()* c.getQuantity()) %> </p>
+						<button class="cancel-btn">Remove</button>
+					</div>
 				</form>
 				
             </div>
@@ -70,7 +78,7 @@
         %>
 
             <div class="cart-footer">
-                <h3>Grand Total: LKR <span id="grand-total">45,500.00</span></h3>
+                <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?dcf.format(total):0 }</span></h3>
                 <button class="checkout-btn">Checkout</button>
             </div>
         </div>

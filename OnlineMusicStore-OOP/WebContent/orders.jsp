@@ -1,4 +1,5 @@
 <%@page import="com.it21320378.*"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<!-- get user session, from "auth" attribute -->
@@ -6,6 +7,18 @@
 	User auth = (User) request.getSession().getAttribute("auth");
 	if(auth!=null){
 		request.setAttribute("auth", auth);
+	}
+	
+	ProductDao pd = new ProductDao(DBConnectionPro.getCon());
+	
+	List<Product> products = pd.getAllProducts();
+	
+	ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+	List<Cart> cartProduct = null;
+	if(cart_list != null){
+		ProductDao pDao = new ProductDao(DBConnectionPro.getCon());
+		cartProduct = pDao.getCartProducts(cart_list);
+		request.setAttribute("cart_list", cart_list);
 	}
 	%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
@@ -32,8 +45,13 @@
             <div class="icons">
                 <div id="search-btn" class="fas fa-search"><span class="icon-name">Search</span></div>
                 <!-- <a href="#" class="fas fa-heart"><span class="icon-name">Favorite</span></a> -->
-                <!-- cart is visible to all users -->
-                <a href="#" id="cart-btn" class="fas fa-shopping-cart"><span class="icon-name">Cart</span></a>
+                <!-- cart badge added to show the item count in the cart -->
+                <div class="cart-icon-wrapper">
+                	<a href="#" id="cart-btn" class="fas fa-shopping-cart">
+                	<span class="cart-badge">${empty cart_list ? 0 : cart_list.size()}</span>
+                	<span class="icon-name">Cart</span>
+                	</a>
+                </div>
                 
                 <!-- if a login session there, user can see these, -- else guest can see -->
                 <% if(auth != null){ %>

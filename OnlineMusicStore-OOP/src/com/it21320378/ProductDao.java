@@ -57,7 +57,7 @@ public class ProductDao {
 						row.setId(rs.getInt("pid"));
 						row.setName(rs.getString("pname"));
 						row.setCategory(rs.getString("pcategory"));
-						row.setPrice(rs.getDouble("pprice")*item.getQuantity());
+						row.setPrice(rs.getDouble("pprice"));
 						row.setImage(rs.getString("pimage"));
 						row.setQuantity(item.getQuantity());
 						products.add(row);
@@ -70,5 +70,29 @@ public class ProductDao {
 		}
 		
 		return products;
+	}
+	
+	/*Method to get total price of the Products in the cart*/
+	public double getTotalCartPrice(ArrayList<Cart> cartList) {
+		double sum =0;
+		
+		try {
+			if(cartList.size()>0) {
+				for(Cart item:cartList) {
+					query = "select pprice from products where pid=?";
+					pst = this.con.prepareStatement(query);
+					pst.setInt(1, item.getId());
+					rs = pst.executeQuery();
+					
+					while(rs.next()) {
+						sum += rs.getDouble("pprice")*item.getQuantity();
+					}
+				}
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return sum;
 	}
 }

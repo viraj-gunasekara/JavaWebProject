@@ -1224,10 +1224,19 @@ section{
     cursor: pointer;
     border-radius: 4px;
     font-size: 1.6rem;
+    margin-left: auto;
 }
 
 .cancel-btn:hover {
     background-color: #c0392b;
+}
+
+.price-and-remove {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;  /* aligns both total and button to the right */
+    gap: 0.5rem;
+    margin-top: 0.5rem; /* spacing from quantity-control if needed */
 }
 
 .cart-footer {

@@ -1,7 +1,6 @@
 <%@page import="com.it21320378.DBConnectionPro"%>
 <%@page import="com.it21320378.*"%>
-<%@page import="java.util.List"%>
-<%@page import="java.util.ArrayList"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
 	pageEncoding="ISO-8859-1"%>
 	<!-- get user session, from "auth" attribute -->
