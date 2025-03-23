@@ -817,7 +817,8 @@ section{
 }
 
 .footer .box-container .box .map{
-    width: 100%;
+	margin-top: 2rem;
+    width: 80%;
 }
 
 /* social links */
@@ -1269,9 +1270,66 @@ section{
     background-color: var(--secondary-color);
 }
 
+/* ORDERS */
+.orders {
+    padding: 3rem 9%;
+    background: #fff;
+    padding-bottom: 5rem; 
+}
 
+.orders .orders-container {
+    overflow-x: auto;
+    border: var(--border);
+    border-radius: 0.5rem;
+    box-shadow: var(--box-shadow);
+    background: #fff;
+    height: 50vh;
+}
 
+.orders table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 1.6rem;
+}
 
+.orders thead {
+    background: var(--primary-color);
+    color: #fff;
+    position: sticky;
+    top: 0;
+    z-index: 2;
+}
+
+.orders th, td {
+    padding: 1.5rem;
+    text-align: left;
+    border-bottom: var(--border);
+    padding-left: 2rem;
+}
+
+.orders th {
+    font-weight: 600;
+}
+
+.orders tbody tr:hover {
+    background: rgba(0, 0, 0, 0.05);
+}
+
+.orders .cancel-btn {
+    background-color: #e74c3c;
+    color: #fff;
+    border: none;
+    padding: 0.7rem 1.2rem;
+    cursor: pointer;
+    border-radius: 0.4rem;
+    font-size: 1.4rem;
+}
+
+.orders .cancel-btn:hover {
+    background-color: #c0392b;
+}
+
+/* ORDERS End */
 
 
 /* RESPONSIVE */
