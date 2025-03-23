@@ -57,7 +57,7 @@ public class ProductDao {
 						row.setId(rs.getInt("pid"));
 						row.setName(rs.getString("pname"));
 						row.setCategory(rs.getString("pcategory"));
-						row.setPrice(rs.getDouble("pprice")*item.getQuantity());
+						row.setPrice(rs.getDouble("pprice"));
 						row.setImage(rs.getString("pimage"));
 						row.setQuantity(item.getQuantity());
 						products.add(row);
