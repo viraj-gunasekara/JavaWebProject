@@ -91,14 +91,23 @@ section{
     background: var(--secondary-color);
 }
 
+body {
+    padding-top: 110px;
+}
+
 /* header section 1 */
 
 .header .header-1{
     background: #fff;
-    padding: 1.5rem 9%;
+    padding: 1rem 9%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1001;
 }
 .header .header-1 .logo{
     font-size: 2.1rem;
@@ -112,7 +121,7 @@ section{
 
 .header .header-1 .search-form{
     width: 45rem;
-    height: 4.5rem;
+    height: 4.2rem;
     border: var(--border);
     overflow: hidden;
     background: #fff;
@@ -234,6 +243,11 @@ section{
 /* header section 2 */
 .header .header-2{
     background: var(--primary-color);
+    position: fixed;
+    top: 62px;
+    left: 0;
+    right: 0;
+    z-index: 1000;
 }
 
 .header .header-2 .navbar{
@@ -251,13 +265,13 @@ section{
     background: var(--secondary-color);
 }
 
-.header .header-2.active{
+/* .header .header-2.active{
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
-}
+} */
 /* header section 2 end */
 
 /* categories */
@@ -687,7 +701,7 @@ section{
     padding: 2rem 1rem;
     border: var(--border);
     margin: 1rem 0;
-    background: linear-gradient(45deg, #eeeeee 90%, #082271 10%);
+    background: linear-gradient(45deg, #eeeeee 90%, #082271 120%);
 }
 
 .arrivals .arrivals-slider .box:hover{
@@ -1305,6 +1319,11 @@ section{
     text-align: left;
     border-bottom: var(--border);
     padding-left: 2rem;
+}
+
+.orders .order-price-column{
+	text-align: right;
+	padding-right: 5rem;
 }
 
 .orders th {

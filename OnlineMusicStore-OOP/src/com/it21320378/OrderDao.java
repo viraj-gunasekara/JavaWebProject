@@ -80,4 +80,18 @@ public class OrderDao {
 		
 		return list;
 	}
+	
+	/*method to cancel order (delete order data from db)*/
+	public void cancelOrder(int id) {
+		try {
+			query = "delete from orders where oid=?";
+			pst = this.con.prepareStatement(query);
+			pst.setInt(1, id);
+			pst.execute();
+			
+		}catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	
 }

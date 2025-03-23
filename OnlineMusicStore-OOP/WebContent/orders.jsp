@@ -148,7 +148,7 @@
 					<th>Name</th>
 					<th>Category</th>
 					<th>Quantity</th>
-					<th>Price</th>
+					<th class="order-price-column">Price</th>
 					<th>Cancel</th>
 				</tr>
 			</thead>
@@ -161,8 +161,8 @@
 					<td><%= o.getName() %></td>
 					<td><%= o.getCategory() %></td>
 					<td><%= o.getItemQuantity() %></td>
-					<td><%= o.getPrice() %></td>
-					<td><a class="cancel-btn" href="CancelOrderServlet?oid=<%= o.getDate() %>">Cancel Order</a></td>
+					<td class="order-price-column"><%= dcf.format(o.getPrice()) %></td>
+					<td><a class="cancel-btn" href="CancelOrderServlet?oid=<%= o.getOrderId() %>">Cancel Order</a></td>
 				</tr>
 				<%}
 			}
