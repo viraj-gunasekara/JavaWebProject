@@ -68,7 +68,7 @@
 					</div>
 					<div class="price-and-remove">
 						<p class="item-total">Total: LKR <%= dcf.format(c.getPrice()* c.getQuantity()) %> </p>
-						<button class="cancel-btn">Remove</button>
+						<a href="RemoveFromCartServlet?pid=<%= c.getId() %>" class="cancel-btn">Remove</a>
 					</div>
 				</form>
 				
@@ -79,7 +79,7 @@
 
             <div class="cart-footer">
                 <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?dcf.format(total):0 }</span></h3>
-                <button class="checkout-btn">Checkout</button>
+                <a href="CheckOutServlet" class="checkout-btn">Checkout</a>
             </div>
         </div>
     </div>
