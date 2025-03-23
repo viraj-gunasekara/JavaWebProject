@@ -79,7 +79,7 @@
 
             <div class="cart-footer">
                 <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?dcf.format(total):0 }</span></h3>
-                <button class="checkout-btn">Checkout</button>
+                <a href="CheckOutServlet" class="checkout-btn">Checkout</a>
             </div>
         </div>
     </div>
