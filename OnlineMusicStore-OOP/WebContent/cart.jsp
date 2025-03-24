@@ -81,12 +81,14 @@
 
             <div class="cart-footer">
                 <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?dcf.format(total):0 }</span></h3>
-                <a href="CheckOutServlet" class="checkout-btn">Checkout</a>
+                <button type="button" class="checkout-btn" id="checkout-btn">Checkout</button>
             </div>
         </div>
     </div>
 
     <!-- js -->
     <script src="js/script.js"></script>
+    
+    
 </body>
 </html>

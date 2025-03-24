@@ -72,10 +72,18 @@
         </div>
 		<!-- header 1 end -->
 		
+		<!-- Alert modal Container -->
+		<div id="alert-modal" class="alert-modal">
+			<div class="alert-modal-content">
+				<span id="close-alert" class="close-btn">&times;</span>
+				<p id="alert-message">Default alert text.</p>
+			</div>
+		</div>
+		
         <!-- Cart Panel Placeholder -->
         <div id="cart-container"></div>
 
-        <!-- header 2  -->
+		<!-- header 2  -->
         <div class="header-2">
             <nav class="navbar">
                 <a href="#home">home</a>
@@ -565,5 +573,9 @@
 
 	<!-- footer section -->
 	<%@include file="includes/footer.jsp"%>
+	
+	<script>
+  		const isLoggedIn = <%= (auth != null) ? "true" : "false" %>;
+	</script>
 </body>
 </html>
