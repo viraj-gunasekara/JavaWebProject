@@ -396,25 +396,94 @@ fetch('cart.jsp')
 
 //cart event listeners - to view cart & close cart
 function setupCartEvents() {
-const cartBtn = document.getElementById('cart-btn');
-const cartPanel = document.getElementById('cart-panel');
-const closeCart = document.getElementById('close-cart');
+	  const cartBtn = document.getElementById('cart-btn');
+	  const cartPanel = document.getElementById('cart-panel');
+	  const closeCart = document.getElementById('close-cart');
 
-if (!cartBtn || !cartPanel || !closeCart) {
-   console.error("Cart elements not found!");
-   return;
-}
+	  if (!cartBtn || !cartPanel || !closeCart) {
+	    console.error("Cart elements not found!");
+	    return;
+	  }
 
-// Show cart when clicking cart icon
-cartBtn.addEventListener('click', () => {
-  cartPanel.classList.add('active');
-});
+	  // Show cart panel
+	  cartBtn.addEventListener('click', () => {
+	    cartPanel.classList.add('active');
+	  });
 
-// Close cart when clicking close icon
-closeCart.addEventListener('click', () => {
-  cartPanel.classList.remove('active');
-});
+	  // Close cart panel
+	  closeCart.addEventListener('click', () => {
+	    cartPanel.classList.remove('active');
+	  });
 
-}
+	  // Quantity update buttons
+	  const incBtns = document.querySelectorAll('.inc-btn');
+	  const decBtns = document.querySelectorAll('.dec-btn');
 
+	  incBtns.forEach(button => {
+	    button.addEventListener('click', () => {
+	      const pid = button.getAttribute('data-pid');
+	      updateQuantity('inc', pid);
+	    });
+	  });
+
+	  decBtns.forEach(button => {
+	    button.addEventListener('click', () => {
+	      const pid = button.getAttribute('data-pid');
+	      updateQuantity('dec', pid);
+	    });
+	  });
+	  
+	  const removeBtns = document.querySelectorAll('.remove-btn');
+
+	  removeBtns.forEach(button => {
+	    button.addEventListener('click', () => {
+	      const pid = button.getAttribute('data-pid');
+	      removeFromCart(pid);
+	    });
+	  });
+
+	}
+
+	function updateQuantity(action, pid) {
+	  fetch(`QuantityIncDecServlet?action=${action}&pid=${pid}`)
+	    .then(response => {
+	      if (response.ok) {
+	        // Reload cart content
+	        reloadCart();
+	      } else {
+	        console.error("Quantity update failed");
+	      }
+	    })
+	    .catch(error => {
+	      console.error("Error updating quantity:", error);
+	    });
+	}
+	
+	function removeFromCart(pid) {
+		  fetch(`RemoveFromCartServlet?pid=${pid}`)
+		    .then(response => {
+		      if (response.ok) {
+		        reloadCart(); // Reload cart content dynamically, keep it open
+		      } else {
+		        console.error("Failed to remove item from cart");
+		      }
+		    })
+		    .catch(error => {
+		      console.error("Error removing item:", error);
+		    });
+	}
+
+	function reloadCart() {
+		  fetch('cart.jsp')
+		    .then(response => response.text())
+		    .then(data => {
+		      const cartContainer = document.getElementById('cart-container');
+		      cartContainer.innerHTML = data;
+
+		      const cartPanel = document.getElementById('cart-panel');
+		      cartPanel.classList.add('active'); // <-- reopen cart panel
+
+		      setupCartEvents(); // reattach events
+		    });
+	}
 //CART END

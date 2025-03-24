@@ -1283,6 +1283,7 @@ body {
 .checkout-btn:hover {
     background-color: var(--secondary-color);
 }
+/* Cart Panel end */
 
 /* ORDERS */
 .orders {

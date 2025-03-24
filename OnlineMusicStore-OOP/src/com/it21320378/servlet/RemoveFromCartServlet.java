@@ -18,24 +18,27 @@ public class RemoveFromCartServlet extends HttpServlet {
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setContentType("text/html;charset=UTF-8");
-		try(PrintWriter out = response.getWriter()){
+		
+		try (PrintWriter out = response.getWriter()) {
 			String id = request.getParameter("pid");
-			/*out.println("Product id: "+id);*/
-			if(id != null) {
+			
+			if (id != null) {
 				ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
-				if(cart_list != null) {
-					for(Cart c:cart_list) {
-						if(c.getId()==Integer.parseInt(id)) {
+				
+				if (cart_list != null) {
+					for (Cart c : cart_list) {
+						if (c.getId() == Integer.parseInt(id)) {
 							cart_list.remove(cart_list.indexOf(c));
 							break;
 						}
 					}
-					response.sendRedirect("allproducts.jsp");
+					out.print("success");
+				} else {
+					out.print("cart-empty");
 				}
-			}else {
-				response.sendRedirect("allproducts.jsp");
+			} else {
+				out.print("invalid-id");
 			}
 		}
 	}
-
 }

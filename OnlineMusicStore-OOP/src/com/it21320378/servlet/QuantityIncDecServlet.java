@@ -26,32 +26,39 @@ public class QuantityIncDecServlet extends HttpServlet {
 			
 			ArrayList<Cart> cart_list = (ArrayList<Cart>) request.getSession().getAttribute("cart-list");
 			
-			if(action != null && id>=1) {
-				if(action.equals("inc")) {
-					for(Cart c:cart_list) {
-						if(c.getId() == id) {
-							int quantity = c.getQuantity();
-							quantity++;
-							c.setQuantity(quantity);
-							response.sendRedirect("allproducts.jsp");
-						}
-					}
-				}
-				
-				if(action.equals("dec")) {
-					for(Cart c:cart_list) {
-						if(c.getId() == id && c.getQuantity() > 1) {
-							int quantity = c.getQuantity();
-							quantity--;
-							c.setQuantity(quantity);
-							break;
-						}
-					}
-					response.sendRedirect("allproducts.jsp");
-				}
-			}else {
-				response.sendRedirect("allproducts.jsp");
+			if (action != null && id >= 1) {
+			    boolean updated = false;
+			    if (action.equals("inc")) {
+			        for (Cart c : cart_list) {
+			            if (c.getId() == id) {
+			                int quantity = c.getQuantity();
+			                quantity++;
+			                c.setQuantity(quantity);
+			                updated = true;
+			                break;
+			            }
+			        }
+			    }
+
+			    if (action.equals("dec")) {
+			        for (Cart c : cart_list) {
+			            if (c.getId() == id && c.getQuantity() > 1) {
+			                int quantity = c.getQuantity();
+			                quantity--;
+			                c.setQuantity(quantity);
+			                updated = true;
+			                break;
+			            }
+			        }
+			    }
+
+			    if (updated) {
+			        response.getWriter().write("success");
+			    } else {
+			        response.getWriter().write("fail");
+			    }
 			}
+
 		}
 	}
 
