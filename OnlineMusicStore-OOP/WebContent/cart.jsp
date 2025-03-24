@@ -40,7 +40,7 @@
         <div class="cart-header">
             <h2>Your Cart</h2>
             <span id="close-cart" class="fas fa-times"></span>
-        </div>
+        </div>        
 
         <!-- Content -->
         <div class="cart-content">
@@ -60,15 +60,17 @@
 				<form action="" method="post">
 					<input type="hidden" name="id" value="<%= c.getId() %>">
 					<div class="item-actions">
+					
 						<div class="quantity-control">
-                        	<a href="QuantityIncDecServlet?action=dec&pid=<%= c.getId() %>" class="qty-btn">-</a>
-                        	<input type="text" name="quantity" value="<%= c.getQuantity() %>" readonly>
-                        	<a href="QuantityIncDecServlet?action=inc&pid=<%= c.getId() %>" class="qty-btn">+</a>
-                    	</div>
+    						<button type="button" class="qty-btn dec-btn" data-pid="<%= c.getId() %>">-</button>
+    						<input type="text" name="quantity" value="<%= c.getQuantity() %>" readonly>
+    						<button type="button" class="qty-btn inc-btn" data-pid="<%= c.getId() %>">+</button>
+						</div>
+						
 					</div>
 					<div class="price-and-remove">
 						<p class="item-total">Total: LKR <%= dcf.format(c.getPrice()* c.getQuantity()) %> </p>
-						<a href="RemoveFromCartServlet?pid=<%= c.getId() %>" class="cancel-btn">Remove</a>
+						<button type="button" class="cancel-btn remove-btn" data-pid="<%= c.getId() %>">Remove</button>
 					</div>
 				</form>
 				
@@ -79,12 +81,14 @@
 
             <div class="cart-footer">
                 <h3>Grand Total: LKR <span id="grand-total">${ (total>0)?dcf.format(total):0 }</span></h3>
-                <a href="CheckOutServlet" class="checkout-btn">Checkout</a>
+                <button type="button" class="checkout-btn" id="checkout-btn">Checkout</button>
             </div>
         </div>
     </div>
 
     <!-- js -->
     <script src="js/script.js"></script>
+    
+    
 </body>
 </html>
