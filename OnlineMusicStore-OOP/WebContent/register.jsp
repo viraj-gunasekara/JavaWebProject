@@ -36,7 +36,7 @@
 				placeholder="re-enter your password" id="" required>
 
 			<div class="checkbox">
-				<input type="checkbox" name="" id="music-box"> <label
+				<input type="checkbox" name="" id="music-box" required> <label
 					for="music-box">
 					<p>
 						I agree to the <a href="#">Terms & Conditions. </a>

@@ -60,7 +60,10 @@ public class RegisterServlet extends HttpServlet {
 		UserDao  regUser = new UserDao(DBConnectionPro.getCon());
 		
 		if (regUser.saveUser(userModel)) {
-		   response.sendRedirect("index.jsp");
+			/*save the user session after he registered in*/
+			request.getSession().setAttribute("auth", userModel);
+			/*registration success user send back to the home page*/
+			response.sendRedirect("index.jsp");
 		} else {
 		    String errorMessage = "User Available";
 		    HttpSession regSession = request.getSession();
