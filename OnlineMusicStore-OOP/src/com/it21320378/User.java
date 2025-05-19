@@ -23,6 +23,15 @@ public class User {
 		this.pnum = pnum;
 		this.password = password;
 	}
+	
+	/*Parameterized constructor without id*/
+	public User(String fname, String lname, String email, int pnum, String password) {
+		this.fname = fname;
+		this.lname = lname;
+		this.email = email;
+		this.pnum = pnum;
+		this.password = password;
+	}
 
 	/*getters & setters*/
 	public int getId() {

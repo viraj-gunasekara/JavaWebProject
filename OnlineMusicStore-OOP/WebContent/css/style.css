@@ -265,6 +265,14 @@ body {
     background: var(--secondary-color);
 }
 
+.header .header-2 .navbar #user-btn{
+	color: #7dddd6;
+}
+
+.header .header-2 .navbar .user-profile-btn{
+	margin-left: 0.8rem
+}
+
 /* .header .header-2.active{
     position: fixed;
     top: 0;

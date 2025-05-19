@@ -14,29 +14,29 @@
 
 		<div id="close-reg-btn" class="fas fa-times"></div>
 
-		<form action="">
+		<form action="RegisterServlet" method="post">
 			<h3>sign up</h3>
 			<div class="name-fields">
 				<div class="field">
-					<span>First name</span> <input type="text" name="" class="box"
-						placeholder="your first name" id="">
+					<span>First name</span> <input type="text" name="fname" class="box"
+						placeholder="your first name" id="" required>
 				</div>
 				<div class="field">
-					<span>Last name</span> <input type="text" name="" class="box"
+					<span>Last name</span> <input type="text" name="lname" class="box"
 						placeholder="your last name" id="">
 				</div>
 			</div>
-			<span>Email</span> <input type="email" name="" class="box"
-				placeholder="enter your email" id=""> <span>Phone
-				number</span> <input type="number" name="" class="box"
+			<span>Email</span> <input type="email" name="email" class="box"
+				placeholder="enter your email" id="" required> <span>Phone
+				number</span> <input type="number" name="pnum" class="box"
 				placeholder="enter your phone number" id=""> <span>Password</span>
 			<input type="password" name="" class="box"
-				placeholder="enter your password" id=""> <span>Confirm
-				password</span> <input type="password" name="" class="box"
-				placeholder="re-enter your password" id="">
+				placeholder="enter your password" id="" required> <span>Confirm
+				password</span> <input type="password" name="password" class="box"
+				placeholder="re-enter your password" id="" required>
 
 			<div class="checkbox">
-				<input type="checkbox" name="" id="music-box"> <label
+				<input type="checkbox" name="" id="music-box" required> <label
 					for="music-box">
 					<p>
 						I agree to the <a href="#">Terms & Conditions. </a>
