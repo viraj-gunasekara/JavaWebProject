@@ -123,7 +123,15 @@
 			</div>
 		</div>
 		<a href="#featured">featured</a> <a href="#new-arrivals">new
-			arrivals</a> <a href="#reviews">reviews</a> </nav>
+			arrivals</a> <a href="#reviews">reviews</a> 
+		
+		<!-- if a login session there, user can see user-profile, guest can not see --> <%
+ 		if (auth != null) {
+ 		%> <a href="" id="user-btn" class="fas fa-user"><span
+			class="user-profile-btn">User Profile</span></a> <%
+ 		}
+ 		%> 
+ 		</nav>
 	</div>
 	</header>
 	<!-- header end -->
