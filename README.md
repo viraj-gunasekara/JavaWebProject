@@ -9,7 +9,7 @@ JSP, Servlet, Java Model Classes, JDBC (with MySQL)
 
 ## Functions Implemented:
 * User
-    * Login | Logout
+    * Login | Logout | Register
 * Product
     * Search
 * Cart
