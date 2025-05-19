@@ -3,6 +3,7 @@ package com.it21320378.servlet;
 import java.io.IOException;
 import java.sql.SQLException;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -65,11 +66,9 @@ public class RegisterServlet extends HttpServlet {
 			/*registration success user send back to the home page*/
 			response.sendRedirect("index.jsp");
 		} else {
-		    String errorMessage = "User Available";
-		    HttpSession regSession = request.getSession();
-		    regSession.setAttribute("RegError", errorMessage);
-		    response.sendRedirect("register.jsp");
-
+			request.setAttribute("RegError", "This email is already registered!");
+			RequestDispatcher dispatcher = request.getRequestDispatcher("register-alert.jsp");
+			dispatcher.forward(request, response);
 		}
 		
 	}
