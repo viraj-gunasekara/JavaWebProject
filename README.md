@@ -1,5 +1,7 @@
 ## OOP Java Web Application With DB Con.
-JSP, Servlet, Java Model Classes, JDBC (with MySQL)
+>Viraj S. Gunasekara
+>
+>>JSP, Servlet, Java Model Classes, JDBC (with MySQL)
 
 ## User Interfaces:
 * Pages
