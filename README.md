@@ -37,10 +37,10 @@
 ```
 1. Clone the Repo
 2. Copy & Past the Project folder to Eclipse workspace
-4. Open Eclipse (Recommended: java v8)
-3. Setup DB connection (Java Resources/src/com.it21320378/DBConnectionPro.java)
-4. Start Tomcat server
-5. WebContent/index.jsp > Run As > Run on Server
+3. Open Eclipse (Recommended: java v8)
+4. Setup DB connection (Java Resources/src/com.it21320378/DBConnectionPro.java)
+5. Start Tomcat server
+6. WebContent/index.jsp > Run As > Run on Server
 ```
 
 ## Resourses:
