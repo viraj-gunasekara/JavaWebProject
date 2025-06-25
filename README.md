@@ -32,6 +32,17 @@
 * Fonts    - Google fonts - poppins
 * Slider Transitions - Swiper Js v11
 
+## Other:
+* Run the Project:
+```
+1. Clone the Repo
+2. Copy & Past the Project folder to Eclipse workspace
+4. Open Eclipse (Recommended: java v8)
+3. Setup DB connection (Java Resources/src/com.it21320378/DBConnectionPro.java)
+4. Start Tomcat server
+5. WebContent/index.jsp > Run As > Run on Server
+```
+
 ## Resourses:
 * Documentations, Google images, PNG image websites, Canva
 
