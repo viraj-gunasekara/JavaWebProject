@@ -1,4 +1,4 @@
-## OOP Java Web Application With DB Con.
+## Online Music Store - OOP Java Web Application With DB Con.
 >Viraj S. Gunasekara
 >
 >>JSP, Servlet, Java Model Classes, JDBC (with MySQL)
